@@ -6,49 +6,41 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
-import java.util.Locale;
 
- class JournalAdapter extends RecyclerView.Adapter<JournalAdapter.ViewHolder> {
+ class JournalAdapter extends RecyclerView.Adapter<JournalAdapter.JournalViewHolder> {
 
-    private List<JournalEntry> entries;
+    private List<JournalEntry> journalList;
 
-    public JournalAdapter(List<JournalEntry> entries) {
-        this.entries = entries;
+    public JournalAdapter(List<JournalEntry> journalList) {
+        this.journalList = journalList;
     }
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_journal, parent, false);
-        return new ViewHolder(view);
+    public JournalViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(android.R.layout.simple_list_item_2, parent, false);
+        return new JournalViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        JournalEntry entry = entries.get(position);
-        holder.mood.setText(entry.getMood());
-        holder.content.setText(entry.getContent());
-
-        // Convert timestamp to readable date
-        SimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy, hh:mm a", Locale.getDefault());
-        holder.date.setText(sdf.format(new Date(entry.getTimestamp())));
+    public void onBindViewHolder(@NonNull JournalViewHolder holder, int position) {
+        JournalEntry entry = journalList.get(position);
+        holder.text1.setText(entry.mood + " - Journal Entry");
+        holder.text2.setText(entry.content);
     }
 
     @Override
     public int getItemCount() {
-        return entries.size();
+        return journalList.size();
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
-        TextView mood, content, date;
-        public ViewHolder(@NonNull View itemView) {
+    static class JournalViewHolder extends RecyclerView.ViewHolder {
+        TextView text1, text2;
+        public JournalViewHolder(@NonNull View itemView) {
             super(itemView);
-            mood = itemView.findViewById(R.id.itemMood);
-            content = itemView.findViewById(R.id.itemContent);
-            date = itemView.findViewById(R.id.itemDate);
+            text1 = itemView.findViewById(android.R.id.text1);
+            text2 = itemView.findViewById(android.R.id.text2);
         }
     }
 }

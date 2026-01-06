@@ -21,14 +21,20 @@ public class JournalHistoryActivity extends AppCompatActivity {
 
         db = AppDatabase.getInstance(this);
 
-        // Fetch data from database in background thread
-        new Thread(() -> {
-            List<JournalEntry> entries = db.journalDao().getAllEntries();
+        // Database se data fetch karna background thread mein
+        loadHistory();
+    }
 
-            // Update UI on main thread
+    private void loadHistory() {
+        new Thread(() -> {
+            List<JournalEntry> entries = db.journalDao().getAllEntries(); // Database call
+
+            // UI update hamesha Main Thread par honi chahiye
             runOnUiThread(() -> {
-                JournalAdapter adapter = new JournalAdapter(entries);
-                recyclerView.setAdapter(adapter);
+                if (entries != null && !entries.isEmpty()) {
+                    JournalAdapter adapter = new JournalAdapter(entries);
+                    recyclerView.setAdapter(adapter);
+                }
             });
         }).start();
     }
