@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.mindease">
+    <!-- Permissions -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MindEase">
+        <activity
+            android:name=".RemaindersActivity"
+            android:exported="false" />
+        <!-- Splash Screen -->
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity> <!-- Onboarding Screen -->
+        <activity
+            android:name=".OnboardingActivity"
+            android:exported="false" /> <!-- Authentication Screens -->
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SignupActivity"
+            android:exported="false" /> <!-- Home Dashboard -->
+        <activity
+            android:name=".HomeActivity"
+            android:exported="false" /> <!-- Calm Tools Screen -->
+        <activity
+            android:name=".CalmToolsActivity"
+            android:exported="false" /> <!-- Analytics Screen -->
+        <activity
+            android:name=".AnalyticsActivity"
+            android:exported="false" /> <!-- Journal Screen -->
+        <activity
+            android:name=".JournalActivity"
+            android:exported="false" /> <!-- Achievements Screen -->
+        <activity
+            android:name=".AchievementsActivity"
+            android:exported="false" /> <!-- Profile & Settings Screen -->
+        <activity
+            android:name=".ProfileSettingsActivity"
+            android:exported="false" />
+    </application>
+
+</manifest>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="@drawable/zubi1">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="📝 Daily Journal"
+        android:textColor="@color/material_dynamic_tertiary60"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Mood Selector -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/card_bg"
+        android:text="Select your mood"
+        android:textSize="16sp" />
+
+    <LinearLayout
+        android:id="@+id/moodSelector"
+        android:background="@drawable/card_bg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:text="😄"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:textSize="32sp"
+            android:padding="8dp"/>
+        <TextView
+            android:text="😊"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:textSize="32sp"
+            android:padding="8dp"/>
+        <TextView
+            android:text="😐"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:textSize="32sp"
+            android:padding="8dp"/>
+        <TextView
+            android:text="😔"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:textSize="32sp"
+            android:padding="8dp"/>
+        <TextView
+            android:text="😰"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:textSize="32sp"
+            android:padding="8dp"/>
+    </LinearLayout>
+
+    <!-- Journal Entry -->
+    <EditText
+        android:id="@+id/journalEditText"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:hint="Write your thoughts..."
+        android:gravity="top"
+        android:background="@drawable/card_bg"
+        android:padding="16dp"
+        android:inputType="textMultiLine"/>
+
+    <!-- Save Button -->
+    <Button
+        android:id="@+id/saveJournalBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save Entry"
+        android:layout_marginTop="16dp"/>
+</LinearLayout>

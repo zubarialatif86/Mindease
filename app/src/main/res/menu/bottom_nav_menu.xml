@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/zubi1">
+
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/home"
+        android:title="Home"/>
+
+    <item
+        android:id="@+id/nav_calm"
+        android:icon="@drawable/calm"
+        android:title="Calm"/>
+
+    <item
+        android:id="@+id/nav_analytics"
+        android:icon="@drawable/analytics"
+        android:title="Analytics"/>
+
+    <item
+        android:id="@+id/nav_journal"
+        android:icon="@drawable/journal"
+        android:title="Journal"/>
+
+    <item
+        android:id="@+id/nav_achievements"
+        android:icon="@drawable/achievements"
+        android:title="Awards"/>
+</menu>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/onboarding_bg_2">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="24dp">
+
+        <!-- Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Calm Your Mind 🌬️"
+            android:textColor="@android:color/black"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="30dp"
+            android:gravity="center"/>
+
+        <!-- Breathing Circle -->
+        <View
+            android:id="@+id/breathingCircle"
+            android:layout_width="300dp"
+            android:layout_height="288dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/breathingcontrol"
+            android:elevation="8dp" />
+
+        <!-- Breathing Text -->
+        <TextView
+            android:id="@+id/breathingText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Inhale…"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:textSize="22sp"
+            android:layout_marginBottom="40dp"
+            android:gravity="center"/>
+
+        <!-- Breathing Tips -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tip: Inhale slowly through your nose for 4 seconds, hold for 2, and exhale through your mouth for 6 seconds."
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:lineSpacingExtra="4dp"
+            android:layout_marginBottom="20dp"
+            android:gravity="center"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Repeat this cycle for 5–10 minutes to calm your mind and reduce stress."
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:lineSpacingExtra="4dp"
+            android:layout_marginBottom="40dp"
+            android:gravity="center"/>
+
+        <!-- Panic Button -->
+        <Button
+            android:id="@+id/panicBtn"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:backgroundTint="#FF5252"
+            android:text="🚨 Panic Button"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:elevation="6dp"
+            android:padding="12dp"
+            android:layout_marginBottom="40dp"/>
+
+        <!-- Motivational Message -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🌿 Take a deep breath and let go of tension."
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:layout_marginBottom="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="💡 Remember: Small mindful pauses make a big difference."
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:layout_marginBottom="50dp"/>
+
+    </LinearLayout>
+</ScrollView>
