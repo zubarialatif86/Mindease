@@ -1,88 +1,242 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="24dp"
-    android:background="@drawable/space">
+    android:background="@drawable/proffile"
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:padding="24dp">
 
-        <!-- Title -->
-        <TextView
-            android:text="Profile &amp; Settings"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:textSize="30sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="24dp"/>
-
-        <!-- Dark Mode -->
+        <!-- Centered Content Container -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="16dp"
-            android:gravity="center_vertical">
+            android:orientation="vertical"
+            android:layout_marginTop="40dp"
+            android:maxWidth="500dp"
+            android:layout_gravity="center_horizontal">
 
+            <!-- Title - Centered -->
             <TextView
-                android:text="Dark Mode"
-                android:layout_width="0dp"
+                android:text="Profile &amp; Settings"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:textSize="20sp"
-                android:layout_weight="1"/>
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.01"
+                android:gravity="center"
+                android:layout_marginBottom="32dp"/>
 
-            <Switch
-                android:id="@+id/darkModeSwitch"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-        </LinearLayout>
+            <!-- Profile Info Section (New) -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/editProfileCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="#4A5568">
 
-        <!-- Notifications -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="16dp"
-            android:gravity="center_vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="20dp"
+                    android:gravity="center_vertical">
+                    
+                    <TextView
+                        android:text="Account Details"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:layout_weight="1"/>
+                    
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@android:drawable/ic_menu_edit"
+                        app:tint="@color/white"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
+            <!-- Dark Mode Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="#4A5568">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="20dp"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:text="Dark Mode"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="normal"
+                        android:layout_weight="1"/>
+
+                    <Switch
+                        android:id="@+id/darkModeSwitch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:thumbTint="@color/white"
+                        android:trackTint="@color/white"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Notifications Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="#4A5568">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="20dp"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:text="Notifications"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="normal"
+                        android:layout_weight="1"/>
+
+                    <Switch
+                        android:id="@+id/notificationsSwitch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:thumbTint="@color/white"
+                        android:trackTint="@color/white"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Help & Support Card (New) -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/helpSupportCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="#4A5568">
+
+                <TextView
+                    android:text="Help &amp; Support"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:gravity="center"/>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Privacy Policy Card -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/privacyPolicyCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="#4A5568">
+
+                <TextView
+                    android:id="@+id/privacyPolicyText"
+                    android:text="Privacy Policy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="normal"
+                    android:gravity="center"/>
+            </androidx.cardview.widget.CardView>
+
+            <!-- About Card (New) -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/aboutCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="#4A5568">
+
+                <TextView
+                    android:text="About MindEase"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:gravity="center"/>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Logout Card -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/logoutCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="#DC2626">
+
+                <TextView
+                    android:id="@+id/logoutText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp"
+                    android:text="Logout"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:gravity="center"/>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Version Info -->
             <TextView
-                android:text="Notifications"
-                android:background="@color/white"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:layout_weight="1"/>
-
-            <Switch
-                android:id="@+id/notificationsSwitch"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:text="Version 1.0.0"
+                android:textColor="#A0AEC0"
+                android:textSize="14sp"
+                android:gravity="center"
+                android:layout_marginTop="32dp"/>
         </LinearLayout>
-
-        <!-- Privacy Policy -->
-        <TextView
-            android:id="@+id/privacyPolicyText"
-            android:text="Privacy Policy"
-            android:background="@color/white"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:layout_marginTop="24dp"/>
-
-        <!-- Logout -->
-        <TextView
-            android:id="@+id/logoutText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:text="Logout"
-            android:textSize="20sp"
-            android:textColor="@android:color/holo_red_dark"
-            android:layout_marginTop="16dp"/>
     </LinearLayout>
 </ScrollView>

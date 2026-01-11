@@ -12,44 +12,26 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
- class ReminderBroadcast extends BroadcastReceiver {
+public class RemainderBroadcast extends BroadcastReceiver {
 
-    private static final String CHANNEL_ID = "mindease_reminder_channel";
+    private static final String CHANNEL_ID = "mindease_reminders";
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        createNotificationChannel(context);
+        String message = intent.getStringExtra("message");
+        if (message == null) message = "Time for your scheduled activity! ✨";
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, CHANNEL_ID)
                 .setSmallIcon(R.drawable.home)
                 .setContentTitle("MindEase Reminder")
-                .setContentText("Time for your scheduled activity! ✨")
+                .setContentText(message)
                 .setPriority(NotificationCompat.PRIORITY_HIGH)
                 .setAutoCancel(true);
 
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(context);
 
-        // --- ERROR FIX START: Permission Check ---
         if (ActivityCompat.checkSelfPermission(context, Manifest.permission.POST_NOTIFICATIONS) == PackageManager.PERMISSION_GRANTED) {
-            notificationManager.notify(200, builder.build());
-        } else {
-            // Agar permission nahi hai, to log ya toast dikha sakte hain (Optional)
-        }
-        // --- ERROR FIX END ---
-    }
-
-    private void createNotificationChannel(Context context) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            CharSequence name = "MindEase Reminders";
-            String description = "Channel for MindEase App reminders";
-            int importance = NotificationManager.IMPORTANCE_HIGH;
-            NotificationChannel channel = new NotificationChannel(CHANNEL_ID, name, importance);
-            channel.setDescription(description);
-
-            NotificationManager notificationManager = context.getSystemService(NotificationManager.class);
-            if (notificationManager != null) {
-                notificationManager.createNotificationChannel(channel);
-            }
+            notificationManager.notify(message.hashCode(), builder.build());
         }
     }
 }

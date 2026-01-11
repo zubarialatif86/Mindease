@@ -16,10 +16,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MindEase">
 
+        <activity android:name=".DashboardActivity" android:exported="false" />
         <activity android:name=".JournalHistoryActivity" android:exported="false" />
         <activity android:name=".RemaindersActivity" android:exported="false" />
 
-        <receiver android:name=".ReminderBroadcast" android:exported="false" />
+        <receiver android:name=".RemainderBroadcast" android:exported="false" />
 
         <activity android:name=".SplashActivity" android:exported="true">
             <intent-filter>
@@ -31,7 +32,7 @@
         <activity android:name=".OnboardingActivity" android:exported="false" />
         <activity android:name=".LoginActivity" android:exported="false" />
         <activity android:name=".SignupActivity" android:exported="false" />
-        <activity android:name=".HomeActivity" android:exported="false" />
+        <activity android:name=".HomeActivity" android:exported="true" />
         <activity android:name=".CalmToolsActivity" android:exported="false" />
         <activity android:name=".AnalyticsActivity" android:exported="false" />
         <activity android:name=".JournalActivity" android:exported="false" />

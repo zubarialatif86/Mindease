@@ -1,101 +1,187 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/onboarding_bg_2">
+    android:background="@drawable/draw">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:gravity="center"
         android:padding="24dp">
 
-        <!-- Title -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Calm Your Mind 🌬️"
-            android:textColor="@android:color/black"
-            android:textSize="28sp"
+            android:textColor="@android:color/white"
+            android:textSize="32sp"
             android:textStyle="bold"
-            android:layout_marginBottom="30dp"
-            android:gravity="center"/>
+            android:layout_marginBottom="32dp"/>
 
-        <!-- Breathing Circle -->
-        <View
-            android:id="@+id/breathingCircle"
-            android:layout_width="300dp"
-            android:layout_height="288dp"
-            android:layout_marginBottom="30dp"
-            android:background="@drawable/breathingcontrol"
-            android:elevation="8dp" />
+        <!-- Main Breathing Tool -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="8dp"
+            app:cardBackgroundColor="#CC000000"
+            android:layout_marginBottom="24dp">
 
-        <!-- Breathing Text -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="24dp">
+
+                <View
+                    android:id="@+id/breathingCircle"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_marginBottom="24dp"
+                    android:background="@drawable/peace" />
+
+                <TextView
+                    android:id="@+id/breathingText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tap to Start"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/white"
+                    android:textSize="24sp"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4-2-6 Method"
+                    android:textColor="#B3FFFFFF"
+                    android:textSize="14sp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- New Calmness Tools -->
         <TextView
-            android:id="@+id/breathingText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Inhale…"
+            android:text="More Peace Tools"
+            android:textColor="@color/white"
+            android:textSize="20sp"
             android:textStyle="bold"
-            android:textColor="@android:color/black"
-            android:textSize="22sp"
-            android:layout_marginBottom="40dp"
-            android:gravity="center"/>
+            android:layout_marginBottom="16dp"/>
 
-        <!-- Breathing Tips -->
-        <TextView
+        <GridLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Tip: Inhale slowly through your nose for 4 seconds, hold for 2, and exhale through your mouth for 6 seconds."
-            android:textColor="@android:color/black"
-            android:textSize="16sp"
-            android:lineSpacingExtra="4dp"
-            android:layout_marginBottom="20dp"
-            android:gravity="center"/>
+            android:columnCount="2"
+            android:alignmentMode="alignMargins">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Repeat this cycle for 5–10 minutes to calm your mind and reduce stress."
-            android:textColor="@android:color/black"
-            android:textSize="16sp"
-            android:lineSpacingExtra="4dp"
-            android:layout_marginBottom="40dp"
-            android:gravity="center"/>
+            <!-- Zen Mode -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnZenMode"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="16dp"
+                app:cardBackgroundColor="#80FFFFFF"
+                android:clickable="true"
+                android:focusable="true">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp"
+                    android:gravity="center">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🧘" android:textSize="32sp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Zen Mode" android:textStyle="bold" android:layout_marginTop="8dp"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Nature Sounds -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnNatureSounds"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="16dp"
+                app:cardBackgroundColor="#80FFFFFF"
+                android:clickable="true"
+                android:focusable="true">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp"
+                    android:gravity="center">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🍃" android:textSize="32sp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Nature" android:textStyle="bold" android:layout_marginTop="8dp"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Affirmations -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnAffirmations"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="16dp"
+                app:cardBackgroundColor="#80FFFFFF"
+                android:clickable="true"
+                android:focusable="true">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp"
+                    android:gravity="center">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="✨" android:textSize="32sp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Affirm" android:textStyle="bold" android:layout_marginTop="8dp"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Quick Tip -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnQuickTip"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="16dp"
+                app:cardBackgroundColor="#80FFFFFF"
+                android:clickable="true"
+                android:focusable="true">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp"
+                    android:gravity="center">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="💡" android:textSize="32sp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Quick Tip" android:textStyle="bold" android:layout_marginTop="8dp"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </GridLayout>
 
         <!-- Panic Button -->
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/panicBtn"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:backgroundTint="#FF5252"
-            android:text="🚨 Panic Button"
+            android:layout_height="64dp"
+            android:layout_marginTop="24dp"
+            android:text="🚨  Instant Help (Panic)"
             android:textAllCaps="false"
             android:textColor="@android:color/white"
-            android:elevation="6dp"
-            android:padding="12dp"
-            android:layout_marginBottom="40dp"/>
-
-        <!-- Motivational Message -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="🌿 Take a deep breath and let go of tension."
-            android:textColor="@android:color/black"
             android:textSize="18sp"
-            android:gravity="center"
-            android:layout_marginBottom="20dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="💡 Remember: Small mindful pauses make a big difference."
-            android:textColor="@android:color/black"
-            android:textSize="16sp"
-            android:gravity="center"
-            android:layout_marginBottom="50dp"/>
+            android:textStyle="bold"
+            app:backgroundTint="#D32F2F"
+            app:cornerRadius="16dp"
+            android:layout_marginBottom="40dp"/>
 
     </LinearLayout>
 </ScrollView>

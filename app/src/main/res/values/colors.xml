@@ -3,4 +3,6 @@
     <color name="secondary">#C7B9FF</color>
     <color name="white">#FFFFFF</color>
     <color name="white_soft">#CCFFFFFF</color>
+    <color name="splash_bg_start">#141E30</color> <!-- Deep Midnight Blue -->
+    <color name="splash_bg_end">#243B55</color>   <!-- Professional Slate Blue -->
 </resources>

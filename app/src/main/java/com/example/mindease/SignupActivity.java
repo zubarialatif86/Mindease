@@ -2,8 +2,8 @@ package com.example.mindease;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
-import android.widget.TextView;
+import android.view.View;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,18 +12,33 @@ public class SignupActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_signup);
+        try {
+            setContentView(R.layout.activity_signup);
 
-        Button signupBtn = findViewById(R.id.signupBtn);
-        TextView loginText = findViewById(R.id.loginText);
+            // Use generic View to avoid ClassCastException (CardView vs Button)
+            View signupBtn = findViewById(R.id.signupBtn);
+            View loginText = findViewById(R.id.loginText);
 
-        signupBtn.setOnClickListener(v -> {
-            startActivity(new Intent(SignupActivity.this, HomeActivity.class));
-            finish();
-        });
+            if (signupBtn != null) {
+                signupBtn.setOnClickListener(v -> {
+                    try {
+                        Intent intent = new Intent(SignupActivity.this, HomeActivity.class);
+                        startActivity(intent);
+                        finish(); // Close Signup screen after success
+                    } catch (Exception e) {
+                        Toast.makeText(this, "Navigation failed: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
 
-        loginText.setOnClickListener(v ->
-                startActivity(new Intent(SignupActivity.this, LoginActivity.class))
-        );
+            if (loginText != null) {
+                loginText.setOnClickListener(v -> {
+                    Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
+                    startActivity(intent);
+                });
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

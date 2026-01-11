@@ -37,6 +37,29 @@ public class OnboardingActivity extends AppCompatActivity {
         viewPager.setAdapter(adapter);
         dotsIndicator.setViewPager2(viewPager);
 
+        // Detect swipe on the last page to go to main screen
+        viewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+            private boolean isLastPageSwiped = false;
+
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+                if (position == onboardingItems.size() - 1 && positionOffset == 0 && positionOffsetPixels == 0) {
+                    if (isLastPageSwiped) {
+                        navigateToMain();
+                    }
+                }
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+                if (viewPager.getCurrentItem() == onboardingItems.size() - 1 && state == ViewPager2.SCROLL_STATE_DRAGGING) {
+                    isLastPageSwiped = true;
+                } else if (state == ViewPager2.SCROLL_STATE_IDLE) {
+                    isLastPageSwiped = false;
+                }
+            }
+        });
+
         skipButton.setOnClickListener(v -> navigateToMain());
     }
 

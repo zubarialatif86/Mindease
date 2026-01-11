@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">MindEase</string>
+    <string name="signup_title">Create Account \ud83c\udf31</string>
+    <string name="hint_name">Name</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="privacy_notice">We never share your data \ud83d\udd12</string>
+    <string name="btn_signup">Create Account</string>
+    <string name="login_prompt">Already have an account? Login</string>
+    <string name="splash_tagline">Your mind deserves peace</string>
 </resources>

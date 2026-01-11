@@ -1,68 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/space"
-    android:padding="20dp">
+    android:background="@drawable/space">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="@drawable/bg_card"
-        android:padding="20dp"
-        android:elevation="6dp">
+        android:padding="24dp">
 
-        <!-- Title -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Reminders ⏰"
-            android:textSize="30sp"
+            android:textColor="@color/white"
+            android:textSize="34sp"
             android:textStyle="bold"
-            android:textColor="#333333"
-            android:layout_marginBottom="20dp"/>
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="8dp"/>
 
-        <!-- Buttons -->
-        <Button
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Set your intentions for a balanced day"
+            android:textColor="#B3FFFFFF"
+            android:textSize="15sp"
+            android:layout_marginBottom="32dp"/>
+
+        <!-- Hydration Reminder Button -->
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/hydrationBtn"
+            style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
             android:layout_width="match_parent"
-            android:layout_height="54dp"
+            android:layout_height="68dp"
+            android:layout_marginBottom="16dp"
             android:text="💧  Hydration Reminder"
-            android:textColor="#FFFFFF"
-            android:layout_marginBottom="14dp"
-            android:background="@drawable/btn_pink"/>
+            android:textAllCaps="false"
+            android:textColor="#0D47A1"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:backgroundTint="#E3F2FD"
+            app:cornerRadius="20dp"
+            app:strokeColor="#BBDEFB"
+            app:strokeWidth="2dp"
+            android:gravity="center_vertical|start"
+            android:paddingStart="24dp"
+            app:elevation="4dp"/>
 
-
-        <Button
+        <!-- Breathing Button -->
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/breathingBtn"
+            style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
             android:layout_width="match_parent"
-            android:layout_height="54dp"
+            android:layout_height="68dp"
+            android:layout_marginBottom="16dp"
             android:text="🌬️  Breathing &amp; Calm"
-            android:layout_marginBottom="14dp"
-            android:background="@drawable/btn_round"/>
+            android:textAllCaps="false"
+            android:textColor="#1B5E20"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:backgroundTint="#E8F5E9"
+            app:cornerRadius="20dp"
+            app:strokeColor="#C8E6C9"
+            app:strokeWidth="2dp"
+            android:gravity="center_vertical|start"
+            android:paddingStart="24dp"
+            app:elevation="4dp"/>
 
-        <Button
+        <!-- Mood Check Button -->
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/moodBtn"
+            style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
             android:layout_width="match_parent"
-            android:layout_height="54dp"
-            android:text="📝  Mood Check"
-            android:layout_marginBottom="14dp"
-            android:background="@drawable/btn_round"/>
+            android:layout_height="68dp"
+            android:layout_marginBottom="16dp"
+            android:text="📝  Daily Mood Check"
+            android:textAllCaps="false"
+            android:textColor="#E65100"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:backgroundTint="#FFF3E0"
+            app:cornerRadius="20dp"
+            app:strokeColor="#FFE0B2"
+            app:strokeWidth="2dp"
+            android:gravity="center_vertical|start"
+            android:paddingStart="24dp"
+            app:elevation="4dp"/>
 
-        <Button
-            android:id="@+id/stressBtn"
+        <!-- Sleep Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/sleepBtn"
+            style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
             android:layout_width="match_parent"
-            android:layout_height="54dp"
-            android:text="⏳  Stress Relief"
-            android:layout_marginBottom="14dp"
-            android:background="@drawable/btn_round"/>
+            android:layout_height="68dp"
+            android:layout_marginBottom="16dp"
+            android:text="😴  Sleep Schedule"
+            android:textAllCaps="false"
+            android:textColor="#4A148C"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:backgroundTint="#F3E5F5"
+            app:cornerRadius="20dp"
+            app:strokeColor="#E1BEE7"
+            app:strokeWidth="2dp"
+            android:gravity="center_vertical|start"
+            android:paddingStart="24dp"
+            app:elevation="4dp"/>
 
-        <Button
-            android:id="@+id/positiveBtn"
+        <!-- Stretch Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/stretchBtn"
+            style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
             android:layout_width="match_parent"
-            android:layout_height="54dp"
-            android:text="✨  Positive Reinforcement"
-            android:background="@drawable/btn_round"/>
+            android:layout_height="68dp"
+            android:layout_marginBottom="16dp"
+            android:text="🧘  Stretch &amp; Move"
+            android:textAllCaps="false"
+            android:textColor="#BF360C"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:backgroundTint="#FBE9E7"
+            app:cornerRadius="20dp"
+            app:strokeColor="#FFCCBC"
+            app:strokeWidth="2dp"
+            android:gravity="center_vertical|start"
+            android:paddingStart="24dp"
+            app:elevation="4dp"/>
+
+        <!-- Detox Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/detoxBtn"
+            style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
+            android:layout_marginBottom="32dp"
+            android:text="📱  Digital Detox"
+            android:textAllCaps="false"
+            android:textColor="#880E4F"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:backgroundTint="#FCE4EC"
+            app:cornerRadius="20dp"
+            app:strokeColor="#F8BBD0"
+            app:strokeWidth="2dp"
+            android:gravity="center_vertical|start"
+            android:paddingStart="24dp"
+            app:elevation="4dp"/>
+
+        <!-- Wellness Tips Section -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mindful Moments"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp"/>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="#26FFFFFF"
+            android:layout_marginBottom="40dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🌿 The 5-4-3-2-1 Rule"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="8dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Acknowledge 5 things you see, 4 you can touch, 3 you hear, 2 you smell, and 1 you can taste."
+                    android:textColor="#CCFFFFFF"
+                    android:textSize="14sp"
+                    android:layout_marginBottom="16dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🍵 Tea Ritual"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="8dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sipping chamomile or peppermint tea can naturally lower cortisol and calm your nerves."
+                    android:textColor="#CCFFFFFF"
+                    android:textSize="14sp"
+                    android:layout_marginBottom="16dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📵 Sunset Screen-Off"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="8dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Try turning off screens 30 minutes before sleep to improve your natural sleep cycle."
+                    android:textColor="#CCFFFFFF"
+                    android:textSize="14sp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
     </LinearLayout>
-
 </ScrollView>

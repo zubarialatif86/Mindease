@@ -3,39 +3,47 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/space">
+    android:background="@drawable/broadnew">
 
-    <!-- ViewPager2 -->
+    <!-- ViewPager2 for immersive slides -->
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/onboardingViewPager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/zubi1"/>
+        android:layout_height="match_parent" />
 
-    <!-- Page Indicator Dots -->
+    <!-- Skip Button: Clean and minimalist -->
+    <TextView
+        android:id="@+id/skipButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="24dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="8dp"
+        android:text="Skip"
+        android:textColor="#CCFFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:background="?attr/selectableItemBackgroundBorderless"/>
+
+    <!-- Professional Page Indicator -->
     <com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
         android:id="@+id/dotsIndicator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="80dp"
-        app:dotsColor="@color/white"
-        app:dotsSize="50dp"
-        app:dotsSpacing="8dp" />
+        android:layout_marginBottom="40dp"
+        app:dotsColor="#80FFFFFF"
+        app:selectedDotColor="@color/white"
+        app:dotsSize="10dp"
+        app:dotsSpacing="8dp"
+        app:dotsCornerRadius="5dp" />
 
-    <!-- Skip Button -->
-    <TextView
-        android:id="@+id/skipButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Skip"
-        android:textSize="25sp"
-        android:textColor="@color/white"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="24dp"
-        android:clickable="true"
-        android:focusable="true"/>
+    <!-- Next / Get Started Button can be added here if needed, 
+         but we'll stick to a clean swipe experience for now as requested -->
+
 </RelativeLayout>

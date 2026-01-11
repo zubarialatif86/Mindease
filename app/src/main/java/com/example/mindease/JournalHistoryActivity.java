@@ -32,7 +32,7 @@ public class JournalHistoryActivity extends AppCompatActivity {
             // UI update hamesha Main Thread par honi chahiye
             runOnUiThread(() -> {
                 if (entries != null && !entries.isEmpty()) {
-                    JournalAdapter adapter = new JournalAdapter(entries);
+                    JournalAdaptor adapter = new JournalAdaptor(entries);
                     recyclerView.setAdapter(adapter);
                 }
             });
